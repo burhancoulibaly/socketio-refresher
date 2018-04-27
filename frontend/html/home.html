@@ -7,19 +7,36 @@
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font: 13px Helvetica, Arial; }
-      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-      #messages { list-style-type: none; margin: 0; padding: 0; }
-      #messages li { padding: 5px 10px; }
+      #chat-home { visibility: hidden; }
+      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 66.7vh; }
+      form input { border: 0; padding: 10px; width: 58.7vh; margin-right: .5%; float: left;}
+      form button {background: rgb(130, 224, 255); border: none; padding: 3px; width: 50px; height: 35px; }
+      #messages { list-style: none; margin: 0; padding: 0; width: 65vw; border-style: solid; border-color: black; height: 92vh; float: left;}
+      #messages li { padding: 5px 10px; list-style: none;}
+      #usr-form{ margin: auto; border: 3px; padding: 10px; display:block; position:relative;}
       #messages li:nth-child(odd) { background: #eee; }
+      #usr-name-box {border-style: solid; border-color: black; background-color:red ; width:32.7vw;float: right; height: 97.3vh; top:0; }
+      #usrnames {list-style: none;}
     </style>
   </head>
   <body>
-    <ul id="messages"></ul>
-    <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
+
+    <div id = "usr-form">
+        <form action="">
+          <input id="usr" autocomplete="off" /><button>Submit</button>
+        </form>
+    </div>
+    <div id = "chat-home">
+        <ul id="messages"></ul>
+        <form action="">
+          <input id="m" autocomplete="off" /><button>Send</button>
+        </form>
+        <div id="usr-name-box">
+          <h1>Users Online</h1>
+          <ul id="usrnames"></ul>
+        </div>
+    </div>
+    
 
     <script src="/js/home.js"></script>
   </body>
